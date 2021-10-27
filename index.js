@@ -9,17 +9,21 @@ const app = express();
 app.use(express.json()); // body-parser
 
 //registering some routes
-app.post("/echo", (req, res) => {
-    res.json(req.body);
+app.post("/users", async (req, res, next) => {
+    try {
+        const email = req.body.email;
+        if (!email||email ===" "){
+            res.status(400).send("U succ giv email")
+        } else {
+            const user = await User.create(req.body);
+            res.json(user);
+        } 
+    } catch (e) {
+      next(e);
+    }
   });
+  
 
-// app.get('/users', async (req, res, next) => {
-//     try {
-
-//     } catch(e) {
-//         next(e) // calling express error handler
-//     }
-// })
 
 
 //port and listen => start the server
