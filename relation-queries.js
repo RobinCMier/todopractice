@@ -29,8 +29,23 @@ async function getUserWithList(id) {
   return result.get({ plain: true });
 }
 
-getUserWithList(1).then(user => console.log("user by id with lists", user));
+//getUserWithList(1).then(user => console.log("user by id with lists", user));
 
 //4. get important to do items with the name of the list they belong to
+//nvt don't have important rn
 
 //5. get one user by id, with their list and including the to do items
+async function fullUserById(id) {
+  const result = await user.findByPk(id, {
+    include: [
+      {
+        model: todolist,
+        attributes: ["name"],
+        include: { model: todoitem, attributes: ["task"] }
+      }
+    ]
+  });
+  return result.get({ plain: true });
+}
+
+fullUserById(1).then(user => console.log("User with tasks", user));
