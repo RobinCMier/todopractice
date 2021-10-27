@@ -6,6 +6,7 @@ module.exports = {
       {
         task: "Pet the cat",
         deadline:"Now",
+        important: true,
         todolistId: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -13,6 +14,7 @@ module.exports = {
       {
         task: "Dishes",
         deadline:"Tonight",
+        important: false,
         todolistId: 4,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -20,6 +22,7 @@ module.exports = {
       {
         task: "Groceries",
         deadline:"In three hours",
+        important: true,
         todolistId: 3,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -27,6 +30,7 @@ module.exports = {
       {
         task: "Pet the cat again",
         deadline:"In four hours",
+        important: true,
         todolistId: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -34,6 +38,7 @@ module.exports = {
       {
         task: "Cook",
         deadline:"Tonight",
+        important: false,
         todolistId: 2,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -41,6 +46,7 @@ module.exports = {
       {
         task: "Sing the cat to sleep",
         deadline:"Bedtime",
+        important: true,
         todolistId: 1,
         createdAt: new Date(),
         updatedAt: new Date(),

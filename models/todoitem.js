@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   todoitem.init({
     task: DataTypes.STRING,
-    deadline: DataTypes.STRING
+    deadline: DataTypes.STRING,
+    important: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'todoitem',
